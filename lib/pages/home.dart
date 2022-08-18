@@ -38,21 +38,20 @@ class _HomeState extends State<Home> {
               // Navigate to Eat.dart
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const Eat()),
+                MaterialPageRoute(builder: (context) => Eat()),
               );
             },
           ),
           SpeedDialChild(
-            child: Hero(
-              tag: 'sppedialchild_fireicon',
-              child: Icon(Icons.local_fire_department),
+            child: Icon(
+              Icons.local_fire_department,
             ),
             backgroundColor: Colors.red,
             // label: 'Burn',
             onTap: () {
               // Navigate to Burn.dart
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => const Burn()));
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => Burn()));
             },
           ),
         ],
