@@ -1,3 +1,5 @@
+// ignore_for_file: constant_identifier_names
+
 import 'dart:math';
 
 import 'package:flutter/material.dart';
@@ -37,5 +39,8 @@ Color shadeColor(Color color, double factor) => Color.fromRGBO(
 
 class Palette {
   static const Color primary = Color(0xFF00D807);
-  static const Color primary_D = Color(0xFF151E11);
+  static const Color black_v = Color(0xFF151E11);
+  static const Color blue_v = Color(0xFF00669D);
+  static const Color grey_v = Color(0xFF7B9972);
+  static const Color white_v = Color(0xFFF3FCF0);
 }
