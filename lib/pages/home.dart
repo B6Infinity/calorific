@@ -1,6 +1,8 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:calorific/main.dart';
+import 'package:calorific/pages/burn.dart';
+import 'package:calorific/pages/eat.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 
@@ -26,24 +28,40 @@ class _HomeState extends State<Home> {
       floatingActionButton: SpeedDial(
         animatedIcon: AnimatedIcons.menu_close,
         backgroundColor: Color(0xff7B9972),
+        spacing: 20,
         children: [
           SpeedDialChild(
             child: Icon(Icons.restaurant),
             // label: 'Eat',
             backgroundColor: Color(0xff00D807),
             onTap: () {
-              showToast('EAAAAAAAAAAT!');
+              // Navigate to Eat.dart
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const Eat()),
+              );
             },
           ),
           SpeedDialChild(
-            child: Icon(Icons.local_fire_department),
+            child: Hero(
+              tag: 'sppedialchild_fireicon',
+              child: Icon(Icons.local_fire_department),
+            ),
             backgroundColor: Colors.red,
             // label: 'Burn',
+            onTap: () {
+              // Navigate to Burn.dart
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const Burn()));
+            },
           ),
         ],
       ),
       body: Center(
-        child: Text('calorific!'),
+        child: Text(
+          'calorific!',
+          style: TextStyle(fontSize: 30),
+        ),
       ),
     );
   }
